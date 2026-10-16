@@ -1,0 +1,15 @@
+{
+  "short_name": "Lumora",
+  "name": "Lumora | A Brighter Everyday",
+  "icons": [
+    {
+      "src": "lumora-mark.png",
+      "sizes": "1254x1254",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#f6f3ee",
+  "background_color": "#fffdfa"
+}
