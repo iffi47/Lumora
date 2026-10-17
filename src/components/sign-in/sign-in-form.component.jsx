@@ -6,7 +6,10 @@ import FormInput from "../form-input/form-input.component";
 import { ButtonsContainer, SignInContainer } from "./sign-in.styles";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import { useDispatch } from "react-redux";
-import { emailSigninStart, googleSingInStart } from "../../store/user/user.action";
+import {
+  emailSigninStart,
+  googleSingInStart,
+} from "../../store/user/user.action";
 // import { UserContext } from "../../contexts/user.context";
 
 const defaultFormFields = {
@@ -14,16 +17,15 @@ const defaultFormFields = {
   password: "",
 };
 
-
 export default function SignIn() {
   const [userData, setUserData] = useState(defaultFormFields);
   const { email, password } = userData;
   const dispatch = useDispatch();
   // const { setCurrentUser } = useContext(UserContext);
   const resetFormFields = () => {
-    setUserData(defaultFormFields)
+    setUserData(defaultFormFields);
   };
-  const handleSubmitData= (event) => {
+  const handleSubmitData = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
     setUserData({ ...userData, [name]: value });
@@ -36,16 +38,16 @@ export default function SignIn() {
     try {
       // const {user} = await signinWithMailAndPassword(email, password)
       // setCurrentUser(user)
-      dispatch(emailSigninStart(email, password))
+      dispatch(emailSigninStart(email, password));
       resetFormFields();
     } catch (error) {
       switch (error.code) {
-        case 'auth/invalid-credential':
-          alert(error.message)
-          break;
-        case 'auth/user-not-found':
+        case "auth/invalid-credential":
           alert(error.message);
-          break
+          break;
+        case "auth/user-not-found":
+          alert(error.message);
+          break;
         default:
           console.error(error);
       }
@@ -64,14 +66,36 @@ export default function SignIn() {
         <h2>Welcome back.</h2>
         <span>Sign in with your email and password</span>
         <form onSubmit={handleSubmit}>
-          <FormInput label="Email" required type="email" name="email" value={email} onChange={handleSubmitData} />
-          <FormInput label="Enter Password" required type="password" name="password" value={password} onChange={handleSubmitData} />
+          <FormInput
+            label="Email"
+            required
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleSubmitData}
+          />
+          <FormInput
+            label="Enter Password"
+            required
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleSubmitData}
+          />
           <ButtonsContainer>
-            <Button buttonType={BUTTON_TYPE_CLASSES.inverted} type="submit">Sign in</Button>
-            <Button buttonType={BUTTON_TYPE_CLASSES.google} onClick={signInWithGoogle} type="button">Sign in with Google</Button>
+            <Button buttonType={BUTTON_TYPE_CLASSES.inverted} type="submit">
+              Sign in
+            </Button>
+            <Button
+              buttonType={BUTTON_TYPE_CLASSES.google}
+              onClick={signInWithGoogle}
+              type="button"
+            >
+              Sign in with Google
+            </Button>
           </ButtonsContainer>
         </form>
       </SignInContainer>
     </>
-  )
+  );
 }

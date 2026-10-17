@@ -9,14 +9,12 @@ import { selectCartCount } from "../../store/cart/cart.selector";
 export default function CartIcon({ onClick }) {
   const cartCount = useSelector(selectCartCount);
   // const { cartCount } = useContext(CartContext)
-  return(
+  return (
     <>
       <CartIconContainer onClick={onClick}>
         <Shopping />
-        <ItemCount>
-          {cartCount}
-        </ItemCount>
+        <ItemCount>{cartCount}</ItemCount>
       </CartIconContainer>
     </>
-  )
+  );
 }

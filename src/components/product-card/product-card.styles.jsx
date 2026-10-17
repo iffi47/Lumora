@@ -1,8 +1,12 @@
 import styled from "styled-components";
-import { BaseButton, GoogleSignInButton, InvertedButton } from "../button/button.styles";
+import {
+  BaseButton,
+  GoogleSignInButton,
+  InvertedButton,
+} from "../button/button.styles";
 
 export const ProductCartContainer = styled.div`
-   width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -31,9 +35,9 @@ export const ProductCartContainer = styled.div`
       opacity: 0.8;
     }
 
-     ${BaseButton},
-  ${GoogleSignInButton},
-  ${InvertedButton}  {
+    ${BaseButton},
+    ${GoogleSignInButton},
+  ${InvertedButton} {
       opacity: 0.85;
       display: flex;
     }
@@ -42,15 +46,15 @@ export const ProductCartContainer = styled.div`
 
 export const Footer = styled.div`
   width: 100%;
-    height: 5%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 18px;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
 `;
 export const Name = styled.span`
-    width: 90%;
-      margin-bottom: 15px;
+  width: 90%;
+  margin-bottom: 15px;
 `;
 export const Price = styled.span`
-    width: 10%;
+  width: 10%;
 `;

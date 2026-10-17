@@ -4,7 +4,7 @@ import { categoriesReducer } from "./categories/categories.reducer";
 import { cartReducer } from "./cart/cart.reducer";
 
 export const rootReducers = combineReducers({
- user: userReducer,
- categories: categoriesReducer,
- cart: cartReducer,
+  user: userReducer,
+  categories: categoriesReducer,
+  cart: cartReducer,
 });

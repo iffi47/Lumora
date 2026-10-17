@@ -1,3 +1,35 @@
-import {Link} from 'react-router-dom';
-import identity from '../../assets/images/Lumora Lifestyle Brand Identity.png';
-export default function About(){return <div className="page-width about-page"><div className="page-intro"><span className="eyebrow">Welcome to Lumora</span><h1>Life, a little brighter.</h1><p>Everyday things. Anything but ordinary.</p></div><img className="identity-image" src={identity} alt="Lumora — lifestyle for a brighter everyday, with botanical L monogram"/><section className="brand-story"><span className="eyebrow">Our story</span><h2>Good design belongs<br/>in your everyday.</h2><p>Lumora is a collection of life's simple pleasures: a cozy corner, a favorite accessory, a small ritual that makes the morning yours. We bring together beautiful, useful pieces with one thought in mind — making everyday living feel a little more considered.</p><Link className="button" to="/shop">Find your next favorite →</Link></section></div>;}
+import { Link } from "react-router-dom";
+import identity from "../../assets/images/Lumora Lifestyle Brand Identity.png";
+export default function About() {
+  return (
+    <div className="page-width about-page">
+      <div className="page-intro">
+        <span className="eyebrow">Welcome to Lumora</span>
+        <h1>Life, a little brighter.</h1>
+        <p>Everyday things. Anything but ordinary.</p>
+      </div>
+      <img
+        className="identity-image"
+        src={identity}
+        alt="Lumora — lifestyle for a brighter everyday, with botanical L monogram"
+      />
+      <section className="brand-story">
+        <span className="eyebrow">Our story</span>
+        <h2>
+          Good design belongs
+          <br />
+          in your everyday.
+        </h2>
+        <p>
+          Lumora is a collection of life's simple pleasures: a cozy corner, a
+          favorite accessory, a small ritual that makes the morning yours. We
+          bring together beautiful, useful pieces with one thought in mind —
+          making everyday living feel a little more considered.
+        </p>
+        <Link className="button" to="/shop">
+          Find your next favorite →
+        </Link>
+      </section>
+    </div>
+  );
+}

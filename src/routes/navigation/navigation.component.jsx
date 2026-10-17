@@ -47,9 +47,7 @@ export default function Navigation() {
   }, [dispatch]);
   return (
     <FavoritesProvider>
-      <a
-        className="skip-link"
-        href="#main">
+      <a className="skip-link" href="#main">
         Skip to content
       </a>
       <div className="announcement">
@@ -64,38 +62,31 @@ export default function Navigation() {
             className="icon-button mobile-menu"
             aria-label="Toggle navigation"
             aria-expanded={menu}
-            onClick={() => setMenu(!menu)}>
+            onClick={() => setMenu(!menu)}
+          >
             <Icon name={menu ? "close" : "menu"} />
           </button>
-          <Link
-            className="brand"
-            to="/"
-            aria-label="Lumora home">
+          <Link className="brand" to="/" aria-label="Lumora home">
             <span className="brand-mark">
-              <img
-                src={monogram}
-                alt=""
-              />
+              <img src={monogram} alt="" />
             </span>
             Lumora<span className="brand-star">✦</span>
           </Link>
           <nav
             className={menu ? "main-nav is-open" : "main-nav"}
-            aria-label="Main navigation">
-            <NavLink
-              to="/"
-              end>
+            aria-label="Main navigation"
+          >
+            <NavLink to="/" end>
               Home
             </NavLink>
-            <NavLink
-              to="/shop"
-              end>
+            <NavLink to="/shop" end>
               Shop
             </NavLink>
             <Link to="/shop#categories">Categories</Link>
             <Link
               className={location.search.includes("deals=true") ? "active" : ""}
-              to="/shop?deals=true">
+              to="/shop?deals=true"
+            >
               Deals
             </Link>
             <NavLink to="/about">Our story</NavLink>
@@ -105,11 +96,9 @@ export default function Navigation() {
             onSubmit={(e) => {
               e.preventDefault();
               navigate(`/shop?q=${encodeURIComponent(query.trim())}`);
-            }}>
-            <Icon
-              name="search"
-              size={18}
-            />
+            }}
+          >
+            <Icon name="search" size={18} />
             <input
               aria-label="Search products"
               placeholder="Search for something lovely…"
@@ -123,58 +112,49 @@ export default function Navigation() {
                 className="icon-button"
                 aria-label="Sign out"
                 title="Sign out"
-                onClick={() => dispatch(signOutStart())}>
+                onClick={() => dispatch(signOutStart())}
+              >
                 <Icon name="user" />
               </button>
             ) : (
-              <Link
-                className="icon-button"
-                to="/auth"
-                aria-label="My account">
+              <Link className="icon-button" to="/auth" aria-label="My account">
                 <Icon name="user" />
               </Link>
             )}
             <Link
               className="icon-button"
               to="/favorites"
-              aria-label="Your favorites">
+              aria-label="Your favorites"
+            >
               <Icon name="heart" />
             </Link>
             <button
               className="icon-button bag-button"
               aria-label={`Shopping bag, ${count} items`}
               aria-expanded={open}
-              onClick={() => dispatch(setIsCartOpen(!open))}>
+              onClick={() => dispatch(setIsCartOpen(!open))}
+            >
               <Icon name="bag" />
               <span className="cart-count">{count}</span>
             </button>
           </div>
           {open && (
-            <aside
-              className="mini-cart"
-              aria-label="Shopping bag">
+            <aside className="mini-cart" aria-label="Shopping bag">
               <div className="section-heading">
                 <h2>Your bag</h2>
                 <button
                   className="icon-button"
                   aria-label="Close bag"
-                  onClick={() => dispatch(setIsCartOpen(false))}>
-                  <Icon
-                    name="close"
-                    size={18}
-                  />
+                  onClick={() => dispatch(setIsCartOpen(false))}
+                >
+                  <Icon name="close" size={18} />
                 </button>
               </div>
               <div className="mini-cart-items">
                 {items.length ? (
                   items.map((item) => (
-                    <div
-                      className="mini-cart-item"
-                      key={item.id}>
-                      <img
-                        src={item.imageUrl}
-                        alt={item.name}
-                      />
+                    <div className="mini-cart-item" key={item.id}>
+                      <img src={item.imageUrl} alt={item.name} />
                       <div>
                         {item.name}
                         <small>
@@ -191,14 +171,8 @@ export default function Navigation() {
                 <span>Subtotal</span>
                 <strong>${total.toFixed(2)}</strong>
               </div>
-              <Link
-                className="button"
-                to="/checkout">
-                View your bag{" "}
-                <Icon
-                  name="arrow"
-                  size={17}
-                />
+              <Link className="button" to="/checkout">
+                View your bag <Icon name="arrow" size={17} />
               </Link>
             </aside>
           )}
@@ -210,9 +184,7 @@ export default function Navigation() {
       <footer className="site-footer">
         <div className="footer-top">
           <div>
-            <Link
-              className="brand"
-              to="/">
+            <Link className="brand" to="/">
               Lumora<span className="brand-star">✦</span>
             </Link>
             <p>
@@ -233,16 +205,15 @@ export default function Navigation() {
             <Link to="/auth">Your account</Link>
           </div>
           <div className="footer-note">
-            <Icon
-              name="leaf"
-              size={30}
-            />
+            <Icon name="leaf" size={30} />
             <h3>Less ordinary. More you.</h3>
             <p>Considered essentials for the way you live.</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Lumora. Made for everyday living.</span>
+          <span>
+            © {new Date().getFullYear()} Lumora. Made for everyday living.
+          </span>
           <span>
             Lifestyle for a brighter everyday <span aria-hidden="true">✦</span>
           </span>

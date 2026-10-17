@@ -10,16 +10,15 @@ export const CartItemContainer = styled.div`
     width: 30%;
   }
 `;
-export const ItemDetails=  styled.div`
-   width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 10px 20px;
+export const ItemDetails = styled.div`
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px 20px;
 `;
 
 export const Name = styled.span`
-font-size: 16px;
-`
-
+  font-size: 16px;
+`;

@@ -7,27 +7,27 @@ import createSagaMiddleware from "redux-saga";
 import { rootSaga } from "./root-saga";
 
 const persistConfig = {
- key: "root",
- storage,
- blacklist: ["user"],
+  key: "root",
+  storage,
+  blacklist: ["user"],
 };
 const sageMiddlewares = createSagaMiddleware();
 const persistedReducer = persistReducer(persistConfig, rootReducers);
 const middlewares = [
- process.env.NODE_ENV === "development" && logger,
- sageMiddlewares,
+  process.env.NODE_ENV === "development" && logger,
+  sageMiddlewares,
 ].filter(Boolean);
 const composeEnchancer =
- (process.env.NODE_ENV !== "production" &&
-  window &&
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
- compose;
+  (process.env.NODE_ENV !== "production" &&
+    window &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+  compose;
 
 const composedEnchancers = composeEnchancer(applyMiddleware(...middlewares));
 export const store = createStore(
- persistedReducer,
- undefined,
- composedEnchancers,
+  persistedReducer,
+  undefined,
+  composedEnchancers,
 );
 sageMiddlewares.run(rootSaga);
 
