@@ -827,6 +827,7 @@ svg {
   margin-top: 22px;
 }
 .order-summary {
+  min-width: 0;
   background: #f2eee7;
   border-radius: 8px;
   padding: 30px;
@@ -850,6 +851,14 @@ svg {
 .order-summary .button {
   width: 100%;
   margin-top: 10px;
+}
+.order-summary .continue-shopping {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid #c9bdae;
+}
+.order-summary .continue-shopping:hover {
+  background: #e6ddd1;
 }
 .checkout-note {
   font-size: 11px;

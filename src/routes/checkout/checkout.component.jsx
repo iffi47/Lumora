@@ -10,6 +10,8 @@ import {
   clearItemFromCart,
 } from "../../store/cart/cart.action";
 import Icon from "../../components/lumora/icon";
+import PaymentForm from "../../components/payment-form/payment-form.component";
+
 export default function Checkout() {
   const dispatch = useDispatch(),
     items = useSelector(selectCartItems),
@@ -77,12 +79,13 @@ export default function Checkout() {
               <strong>Subtotal</strong>
               <strong>${total.toFixed(2)}</strong>
             </div>
+            <PaymentForm />
             <p className="checkout-note">
               <Icon name="bag" size={18} />
               Your bag is saved on this device. Online payment is not available
               in this storefront yet.
             </p>
-            <Link className="button" to="/shop">
+            <Link className="button continue-shopping" to="/shop">
               Continue shopping <Icon name="arrow" size={16} />
             </Link>
           </aside>
